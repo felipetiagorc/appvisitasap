@@ -1,0 +1,42 @@
+import Head from 'next/head';
+import Image from 'next/image';
+import Inicial from 'components/inicial';
+import Header from 'containers/Header';
+import { getSession } from 'next-auth/react';
+
+export const getServerSideProps = async context => {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false
+      }
+    };
+  }
+  return {
+    props: {
+      session
+    }
+  };
+};
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>AppVisitaSAP</title>
+        <meta name='description' content='App para envio de docs' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+
+      <Inicial user={session?.user?.name} />
+    </>
+  );
+}
+
+Home.getLayout = function getLayout(page) {
+  return <Header>{page}</Header>;
+};
