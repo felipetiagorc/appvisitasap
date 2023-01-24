@@ -5,31 +5,36 @@ import BellIcon from '@heroicons/react/24/outline/BellIcon';
 import Bars3Icon from '@heroicons/react/24/outline/Bars3Icon';
 import MoonIcon from '@heroicons/react/24/outline/MoonIcon';
 import SunIcon from '@heroicons/react/24/outline/SunIcon';
-import { openRightDrawer } from '../features/common/rightDrawerSlice';
+import { openRightDrawer } from '../store/slices/rightDrawerSlice';
 import { RIGHT_DRAWER_TYPES } from '../utils/globalConstantUtil';
 import Link from 'next/link';
 
 function Header() {
   const dispatch = useDispatch();
   const { noOfNotifications, pageTitle } = useSelector(state => state.header);
-  const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem('theme')
-  );
+  const [currentTheme, setCurrentTheme] = useState('light');
 
   useEffect(() => {
     themeChange(false);
     if (currentTheme === null) {
-      if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      ) {
-        setCurrentTheme('dark');
-      } else {
-        setCurrentTheme('light');
-      }
+      themeCheck();
     }
     // 👆 false parameter is required for react project
   }, []);
+
+  //adaptando pro next q só tem acesso ao localstorage no useEffect
+
+  const themeCheck = () => {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      setCurrentTheme('dark');
+    } else {
+      setCurrentTheme('light');
+    }
+  };
 
   // Opening right sidebar for notification
   const openNotification = () => {
@@ -42,7 +47,7 @@ function Header() {
   };
 
   function logoutUser() {
-    localStorage.clear();
+    // localStorage.clear();
     window.location.href = '/';
   }
 
@@ -120,13 +125,13 @@ function Header() {
               className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
             >
               <li className='justify-between'>
-                <Link to={'/app/settings-profile'}>
+                <Link href={'/app/settings-profile'}>
                   Profile Settings
                   <span className='badge'>New</span>
                 </Link>
               </li>
               <li className=''>
-                <Link to={'/app/settings-billing'}>Bill History</Link>
+                <Link href={'/app/settings-billing'}>Bill History</Link>
               </li>
               <div className='divider mt-0 mb-0'></div>
               <li>

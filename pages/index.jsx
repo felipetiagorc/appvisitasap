@@ -4,23 +4,23 @@ import Inicial from 'components/inicial';
 import Header from 'containers/Header';
 import { getSession } from 'next-auth/react';
 
-export const getServerSideProps = async context => {
-  const session = await getSession(context);
+// export const getServerSideProps = async context => {
+//   const session = await getSession(context);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/login',
-        permanent: false
-      }
-    };
-  }
-  return {
-    props: {
-      session
-    }
-  };
-};
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: '/login',
+//         permanent: false
+//       }
+//     };
+//   }
+//   return {
+//     props: {
+//       session
+//     }
+//   };
+// };
 
 export default function Home() {
   return (
@@ -32,7 +32,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Inicial user={session?.user?.name} />
+      <Inicial />
+      {/* <Inicial user={session?.user?.name} /> */}
     </>
   );
 }
