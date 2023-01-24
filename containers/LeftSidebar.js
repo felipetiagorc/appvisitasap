@@ -1,7 +1,9 @@
 import routes from './LeftSideBar-Rotas';
 // import { useLocation } from 'react-router-dom';
 import { useRouter } from 'next/router';
-import NavLink from '../components/NavLink';
+// import NavLink from '../components/NavLink';
+// import Link from 'next/link';
+
 import SidebarSubmenu from './SidebarSubmenu';
 import Image from 'next/image';
 import Brasao from 'public/brasao-sp-eleicao.png';
@@ -14,7 +16,7 @@ function LeftSidebar() {
       <label htmlFor='left-sidebar-drawer' className='drawer-overlay'></label>
       <ul className='menu  pt-2 w-80 bg-base-100 text-base-content'>
         <li className='mb-2 font-semibold text-xl'>
-          <NavLink href={'/'}>
+          <a href={'/'}>
             <Image
               className='mask mask-squircle w-10'
               width='100'
@@ -22,8 +24,7 @@ function LeftSidebar() {
               src={Brasao}
               alt='BrasaoSP'
             />
-            Sistema
-          </NavLink>{' '}
+          </a>{' '}
         </li>
         {routes.map((route, k) => {
           return (
@@ -31,7 +32,7 @@ function LeftSidebar() {
               {route.submenu ? (
                 <SidebarSubmenu {...route} />
               ) : (
-                <NavLink
+                <a
                   href={route.path}
                   className={({ isActive }) =>
                     `${
@@ -46,7 +47,7 @@ function LeftSidebar() {
                       aria-hidden='true'
                     ></span>
                   ) : null}
-                </NavLink>
+                </a>
               )}
             </li>
           );
