@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Inicial from 'components/inicial';
 import Header from 'containers/Header';
+import Layout from 'containers/layout';
 import { getSession } from 'next-auth/react';
 
 // export const getServerSideProps = async context => {
@@ -39,5 +40,5 @@ export default function Home() {
 }
 
 Home.getLayout = function getLayout(page) {
-  return <Header>{page}</Header>;
+  return <Layout>{page}</Layout>;
 };
