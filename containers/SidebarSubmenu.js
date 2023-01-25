@@ -36,7 +36,7 @@ function SidebarSubmenu({ submenu, name, icon }) {
           {submenu.map((m, k) => {
             return (
               <li key={k}>
-                <Link href={m.path}>
+                <a href={m.path}>
                   {m.icon} {m.name}
                   {router.pathname == m.path ? (
                     <span
@@ -44,7 +44,7 @@ function SidebarSubmenu({ submenu, name, icon }) {
                       aria-hidden='true'
                     ></span>
                   ) : null}
-                </Link>
+                </a>
               </li>
             );
           })}

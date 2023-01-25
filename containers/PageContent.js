@@ -31,8 +31,6 @@ function PageContent() {
           {routes.map((route, key) => {
             return <Link key={key} exact={true} href={`${route.path}`} />;
           })}
-
-          {/* Redirecting unknown url to 404 page */}
         </Suspense>
         <div className='h-16'></div>
       </main>
