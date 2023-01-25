@@ -24,27 +24,27 @@ const submenuIconClasses = `h-5 w-5`;
 
 const routes = [
   {
-    path: '/app/dashboard',
+    path: '/dashboard',
     icon: <Squares2X2Icon className={iconClasses} />,
     name: 'Dashboard'
   },
   {
-    path: '/app/documentos',
+    path: '/documentos',
     icon: <Squares2X2Icon className={iconClasses} />,
     name: 'Documentos'
   },
   {
-    path: '/app/leads', // url
+    path: '/leads', // url
     icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
     name: 'Leads' // name that appear in Sidebar
   },
   {
-    path: '/app/charts', // url
+    path: '/charts', // url
     icon: <ChartBarIcon className={iconClasses} />, // icon component
     name: 'Charts' // name that appear in Sidebar
   },
   {
-    path: '/app/integration', // url
+    path: '/integration', // url
     icon: <BoltIcon className={iconClasses} />, // icon component
     name: 'Integration' // name that appear in Sidebar
   },
