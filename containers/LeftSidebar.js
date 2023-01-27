@@ -2,11 +2,11 @@ import routes from './LeftSideBar-Rotas';
 // import { useLocation } from 'react-router-dom';
 import { useRouter } from 'next/router';
 // import NavLink from '../components/NavLink';
-// import Link from 'next/link';
 
 import SidebarSubmenu from './SidebarSubmenu';
 import Image from 'next/image';
 import Brasao from 'public/brasao-sp-eleicao.png';
+import Link from 'next/link';
 
 function LeftSidebar() {
   const router = useRouter();
@@ -26,30 +26,23 @@ function LeftSidebar() {
             />
           </a>{' '}
         </li>
-        {routes.map((route, k) => {
+        {routes.map((item, k) => {
           return (
-            <li className='' key={k}>
-              {route.submenu ? (
-                <SidebarSubmenu {...route} />
-              ) : (
-                <a
-                  href={route.path}
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? 'font-semibold  bg-base-200 ' : 'font-normal'
-                    }`
-                  }
-                >
-                  {route.icon} {route.name}
-                  {router.asPath === route.path ? (
-                    <span
-                      className='absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary '
-                      aria-hidden='true'
-                    ></span>
-                  ) : null}
-                </a>
-              )}
-            </li>
+            <Link href={item.path} key={k}>
+              <div
+                className={`w-24 h-24 text-center border-b-2 border-secondary-500  mt-3 cursor-pointer  ${
+                  router.asPath === item.path
+                    ? 'text-primary-500'
+                    : 'text-secondary-300'
+                }`}
+              >
+                <div className=' hover:text-primary-500 w-10 mx-auto pb-2'>
+                  {item.icon}
+                </div>
+
+                <p className='text-secondary-300'>{item.name}</p>
+              </div>
+            </Link>
           );
         })}
       </ul>

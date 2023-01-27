@@ -2,10 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 // import Inicial from 'components/inicial';
 import Header from 'containers/Header';
+
 import Layout from 'containers/layout';
 import { getSession } from 'next-auth/react';
 import LeftSidebar from '../containers/LeftSidebar';
-import PageContent from '../containers/PageContent';
 
 // export const getServerSideProps = async context => {
 //   const session = await getSession(context);
@@ -34,7 +34,6 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header />
 
       {/* <Inicial /> */}
       {/* <Inicial user={session?.user?.name} /> */}
@@ -43,5 +42,9 @@ export default function Home() {
 }
 
 Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return (
+    <>
+      <Layout>{page}</Layout>;
+    </>
+  );
 };

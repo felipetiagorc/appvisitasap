@@ -1,8 +1,12 @@
 import { SessionProvider } from 'next-auth/react';
 import { Provider as ReduxProvider } from 'react-redux';
+import { wrapper } from '../store/store';
 import '../styles/globals.css';
-import store from '../store/store';
-function App({ Component, pageProps: { session, ...pageProps } }) {
+
+import { Layout as MeuLayout } from '@/containers/layout';
+
+function App({ Component, pageProps: { session, ...pageProps }, ...rest }) {
+  const { store, props } = wrapper.useWrappedStore(rest);
   return (
     <ReduxProvider store={store}>
       <SessionProvider session={session}>
@@ -20,4 +24,4 @@ const Layout = ({ Component, pageProps }) => {
   }
 };
 
-export default App;
+export default wrapper.withRedux(App);

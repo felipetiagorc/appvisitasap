@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+//https://blog.logrocket.com/use-redux-next-js/
+import { HYDRATE } from 'next-redux-wrapper';
 
 export const headerSlice = createSlice({
   name: 'header',
@@ -21,6 +23,14 @@ export const headerSlice = createSlice({
       console.log(action);
       state.newNotificationMessage = action.payload.message;
       state.newNotificationStatus = action.payload.status;
+    }
+  },
+  extraReducers: {
+    [HYDRATE]: (state, action) => {
+      return {
+        ...state,
+        ...action.payload.pageTitle
+      };
     }
   }
 });
