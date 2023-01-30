@@ -8,6 +8,13 @@ import SunIcon from '@heroicons/react/24/outline/SunIcon';
 import { openRightDrawer } from '../store/slices/rightDrawerSlice';
 import { RIGHT_DRAWER_TYPES } from '../utils/globalConstantUtil';
 import Link from 'next/link';
+import { wrapper } from '@/store/store';
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  store => async () => {
+    store.getState(header.pageTitle);
+  }
+);
 
 function Header() {
   const dispatch = useDispatch();
@@ -21,6 +28,8 @@ function Header() {
     }
     // 👆 false parameter is required for react project
   }, []);
+
+  console.log('pageTitle: ', pageTitle);
 
   //adaptando pro next q só tem acesso ao localstorage no useEffect
 

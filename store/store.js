@@ -29,14 +29,14 @@ const combinedReducer = combineReducers({
 
 // estado de entrada para esse master redux terá todos os valores prévios...
 
-const materReducer = (state, action) => {
+const masterReducer = (state, action) => {
   if (action.type === HYDRATE) {
     const nextState = {
       ...state,
       // aqui passa o que esta vindo no payload
       // para cada slice ...
-      headerSlice: {
-        pageTitle: state.header.pageTitle,
+      header: {
+        pageTitle: action.payload.header.pageTitle,
         isOpen: state.header.isOpen,
         bodyType: state.header.bodyType,
         size: state.header.size,
@@ -54,7 +54,7 @@ const materReducer = (state, action) => {
 
 const makeStore = () =>
   configureStore({
-    reducer: materReducer,
+    reducer: masterReducer,
     devTools: true
   });
 

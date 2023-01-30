@@ -8,9 +8,9 @@ import { useEffect, useRef } from 'react';
 
 const Page404 = lazy(() => import('../pages/404'));
 
-function PageContent() {
+function PageContent({ children }) {
   const mainContentRef = useRef(null);
-  const { pageTitle } = useSelector(state => state.header);
+  const { pageTitle } = useSelector(state => state.header.pageTitle);
 
   // Scroll back to top on new page load
   useEffect(() => {
@@ -28,9 +28,10 @@ function PageContent() {
         ref={mainContentRef}
       >
         <Suspense fallback={<SuspenseContent />}>
-          {routes.map((route, key) => {
-            return <Link key={key} exact={true} href={`${route.path}`} />;
-          })}
+          {/* {routes.map((route, key) => {
+            return <Link key={key} href={`${route.path}`} />;
+          })} */}
+          {children}
         </Suspense>
         <div className='h-16'></div>
       </main>
