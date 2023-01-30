@@ -3,10 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setPageTitle } from '../store/slices/headerSlice';
 import Dashboard from '../features/dashboard/index';
 import { wrapper } from '../store/store';
-
-function InternalPage() {
-  return <Dashboard />;
-}
+import Layout from '@/containers/layout';
 
 export const getServerSideProps = wrapper.getServerSideProps(
   store =>
@@ -23,5 +20,8 @@ export const getServerSideProps = wrapper.getServerSideProps(
       };
     }
 );
+function InternalPage() {
+  return <Dashboard />;
+}
 
 export default InternalPage;

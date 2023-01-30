@@ -14,23 +14,23 @@ function LeftSidebar() {
   return (
     <div className='drawer-side '>
       <label htmlFor='left-sidebar-drawer' className='drawer-overlay'></label>
-      <ul className='menu  pt-2 w-80 bg-base-100 text-base-content'>
+      <ul className='menu  pt-2 w-52 bg-base-100 text-base-content'>
         <li className='mb-2 font-semibold text-xl'>
-          <a href={'/'}>
+          <Link href={'/'}>
             <Image
-              className='mask mask-squircle w-10'
-              width='100'
-              height='55'
+              className='text-center'
+              width='150'
+              height='60'
               src={Brasao}
               alt='BrasaoSP'
             />
-          </a>{' '}
+          </Link>
         </li>
         {routes.map((item, k) => {
           return (
             <Link href={item.path} key={k}>
               <div
-                className={`w-24 h-24 text-center border-b-2 border-secondary-500  mt-3 cursor-pointer  ${
+                className={`w-48 h-24 text-center pt-6 border-2 border-secondary-500  mt-3 cursor-pointer  ${
                   router.asPath === item.path
                     ? 'text-primary-500'
                     : 'text-secondary-300'

@@ -3,23 +3,25 @@ import { SessionProvider } from 'next-auth/react';
 import { wrapper } from '../store/store';
 import '../styles/globals.css';
 
-import { Layout as MeuLayout } from '@/containers/layout';
+import Layout from '@/containers/layout';
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <Layout Component={Component} pageProps={pageProps} />
+      <Layout>
+        <Component pageProps={pageProps} />
+      </Layout>
     </SessionProvider>
   );
 }
 
-const Layout = ({ Component, pageProps }) => {
-  if (Component.getLayout) {
-    return Component.getLayout(<Component {...pageProps} />);
-  } else {
-    return <Component {...pageProps} />;
-  }
-};
+// const Layout = ({ Component, pageProps }) => {
+//   if (Component.getLayout) {
+//     return Component.getLayout(<Component {...pageProps} />);
+//   } else {
+//     return <Component {...pageProps} />;
+//   }
+// };
 
 export default wrapper.withRedux(App);
 
