@@ -24,15 +24,17 @@ export const headerSlice = createSlice({
       state.newNotificationMessage = action.payload.message;
       state.newNotificationStatus = action.payload.status;
     }
-  },
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.pageTitle
-      };
-    }
   }
+  //isso q da warning no console? no
+  // mas no video q to vendo ele usa esse hydrate no arquivo 'store' dele, q é o slice meu..
+  // extraReducers: {
+  //   [HYDRATE]: (state, action) => {
+  //     return {
+  //       ...state,
+  //       ...action.payload.pageTitle
+  //     };
+  //   }
+  // }
 });
 // actions creators - gerados para cada funcao reducer
 export const { setPageTitle, removeNotificationMessage, showNotification } =
