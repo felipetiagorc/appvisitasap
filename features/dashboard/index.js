@@ -28,10 +28,10 @@ const statsData = [
     description: 'Current month'
   },
   {
-    title: 'Pending Leads',
+    title: 'Pending Cadastro',
     value: '450',
     icon: <CircleStackIcon className='w-8 h-8' />,
-    description: '50 in hot leads'
+    description: '50 in hot cadastro'
   },
   {
     title: 'Active Users',

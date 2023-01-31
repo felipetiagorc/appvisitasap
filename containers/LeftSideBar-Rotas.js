@@ -34,9 +34,9 @@ const routes = [
     name: 'Documentos'
   },
   {
-    path: '/leads', // url
+    path: '/cadastro', // url
     icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
-    name: 'Leads' // name that appear in Sidebar
+    name: 'Cadastro' // name that appear in Sidebar
   },
   {
     path: '/charts', // url

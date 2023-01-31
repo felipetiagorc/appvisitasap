@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import headerSlice from './slices/headerSlice';
 import modalSlice from './slices/modalSlice';
 import rightDrawerSlice from './slices/rightDrawerSlice';
-import leadsSlice from '../features/leads/leadSlice';
+import cadastroSlice from '../features/cadastro/cadastroSlice';
 import { HYDRATE, createWrapper } from 'next-redux-wrapper';
 
 // https://www.youtube.com/watch?v=bpbLq6NxIm8
@@ -12,14 +12,14 @@ import { HYDRATE, createWrapper } from 'next-redux-wrapper';
 //   header: headerSlice,
 //   rightDrawer: rightDrawerSlice,
 //   modal: modalSlice,
-//   lead: leadsSlice
+//   cadastro: cadastroSlice
 // });
 
 const combinedReducer = combineReducers({
   header: headerSlice,
   rightDrawer: rightDrawerSlice,
   modal: modalSlice,
-  lead: leadsSlice
+  cadastro: cadastroSlice
 });
 
 //antes do next-wraper

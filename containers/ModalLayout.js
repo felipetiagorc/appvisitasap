@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { MODAL_BODY_TYPES } from '../utils/globalConstantUtil';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeModal } from '../store/slices/modalSlice';
-import AddLeadModalBody from '../features/leads/components/AddLeadModalBody';
+import AddCadastroModalBody from '../features/cadastro/components/AddCadastroModalBody';
 
 function ModalLayout() {
   const { isOpen, bodyType, size, extraObject, title } = useSelector(
@@ -33,7 +33,7 @@ function ModalLayout() {
           {
             {
               [MODAL_BODY_TYPES.LEAD_ADD_NEW]: (
-                <AddLeadModalBody
+                <AddCadastroModalBody
                   closeModal={close}
                   extraObject={extraObject}
                 />

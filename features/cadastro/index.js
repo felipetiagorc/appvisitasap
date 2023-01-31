@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TitleCard from '../../components/Cards/TitleCard';
 import { openModal } from '../../store/slices/modalSlice';
-import { deleteLead, getLeadsContent } from './leadSlice';
+import { deleteCadastro, getCadastroContent } from './cadastroSlice';
 import { MODAL_BODY_TYPES } from '../../utils/globalConstantUtil';
 import TrashIcon from '@heroicons/react/24/outline/TrashIcon';
 import { showNotification } from '../../store/slices/modalSlice';
@@ -10,11 +10,11 @@ import { showNotification } from '../../store/slices/modalSlice';
 const TopSideButtons = () => {
   const dispatch = useDispatch();
 
-  const openAddNewLeadModal = () => {
+  const openAddNewCadastroModal = () => {
     dispatch(
       openModal({
-        title: 'Add New Lead',
-        bodyType: MODAL_BODY_TYPES.LEAD_ADD_NEW
+        title: 'Add New Cadastro',
+        bodyType: MODAL_BODY_TYPES.CADASTRO_ADD_NEW
       })
     );
   };
@@ -23,7 +23,7 @@ const TopSideButtons = () => {
     <div className='inline-block float-right'>
       <button
         className='btn px-6 btn-sm normal-case btn-primary'
-        onClick={() => openAddNewLeadModal()}
+        onClick={() => openAddNewCadastroModal()}
       >
         Add New
       </button>
@@ -31,12 +31,12 @@ const TopSideButtons = () => {
   );
 };
 
-function Leads() {
-  const { leads } = useSelector(state => state.lead);
+function Cadastro() {
+  const { cadastro } = useSelector(state => state.cadastro);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getLeadsContent());
+    dispatch(getCadastroContent());
   }, []);
 
   const getDummyStatus = index => {
@@ -50,19 +50,19 @@ function Leads() {
     else return <div className='badge badge-ghost'>Open</div>;
   };
 
-  const deleteCurrentLead = index => {
-    dispatch(deleteLead({ index }));
-    dispatch(showNotification({ message: 'Lead Deleted!', status: 1 }));
+  const deleteCurrentCadastro = index => {
+    dispatch(deleteCadastro({ index }));
+    dispatch(showNotification({ message: 'Cadastro Deleted!', status: 1 }));
   };
 
   return (
     <>
       <TitleCard
-        title='Current Leads'
+        title='Current Cadastro'
         topMargin='mt-2'
         TopSideButtons={<TopSideButtons />}
       >
-        {/* Leads List in table format loaded from slice after api call */}
+        {/* Cadastro List in table format loaded from slice after api call */}
         <div className='overflow-x-auto w-full'>
           <table className='table w-full'>
             <thead>
@@ -76,7 +76,7 @@ function Leads() {
               </tr>
             </thead>
             <tbody>
-              {leads.map((l, k) => {
+              {cadastro.map((l, k) => {
                 return (
                   <tr key={k}>
                     <td>
@@ -101,7 +101,7 @@ function Leads() {
                     <td>
                       <button
                         className='btn btn-square btn-ghost'
-                        onClick={() => deleteCurrentLead(k)}
+                        onClick={() => deleteCurrentCadastro(k)}
                       >
                         <TrashIcon className='w-5' />
                       </button>
@@ -117,4 +117,4 @@ function Leads() {
   );
 }
 
-export default Leads;
+export default Cadastro;

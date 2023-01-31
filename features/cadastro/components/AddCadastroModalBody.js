@@ -3,49 +3,51 @@ import { useDispatch } from 'react-redux';
 import InputText from '../../../components/Input/InputText';
 import ErrorText from '../../../components/Typography/ErrorText';
 import { showNotification } from '../../../store/slices/headerSlice';
-import { addNewLead } from '../leadSlice';
+import { addNewCadastro } from '../cadastroSlice';
 
-const INITIAL_LEAD_OBJ = {
+const INITIAL_CADASTRO_OBJ = {
   first_name: '',
   last_name: '',
   email: ''
 };
 
-function AddLeadModalBody({ closeModal }) {
+function AddCadastroModalBody({ closeModal }) {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [leadObj, setLeadObj] = useState(INITIAL_LEAD_OBJ);
+  const [cadastroObj, setCadastroObj] = useState(INITIAL_CADASTRO_OBJ);
 
-  const saveNewLead = () => {
-    if (leadObj.first_name.trim() === '')
+  const saveNewCadastro = () => {
+    if (cadastroObj.first_name.trim() === '')
       return setErrorMessage('First Name is required!');
-    else if (leadObj.email.trim() === '')
+    else if (cadastroObj.email.trim() === '')
       return setErrorMessage('Email id is required!');
     else {
-      let newLeadObj = {
+      let newCadastroObj = {
         id: 7,
-        email: leadObj.email,
-        first_name: leadObj.first_name,
-        last_name: leadObj.last_name,
+        email: cadastroObj.email,
+        first_name: cadastroObj.first_name,
+        last_name: cadastroObj.last_name,
         avatar: 'https://reqres.in/img/faces/1-image.jpg'
       };
-      dispatch(addNewLead({ newLeadObj }));
-      dispatch(showNotification({ message: 'New Lead Added!', status: 1 }));
+      dispatch(addNewCadastro({ newCadastroObj }));
+      dispatch(
+        showNotification({ message: 'Novo cadastro adicionado!', status: 1 })
+      );
       closeModal();
     }
   };
 
   const updateFormValue = ({ updateType, value }) => {
     setErrorMessage('');
-    setLeadObj({ ...leadObj, [updateType]: value });
+    setCadastroObj({ ...cadastroObj, [updateType]: value });
   };
 
   return (
     <>
       <InputText
         type='text'
-        defaultValue={leadObj.first_name}
+        defaultValue={cadastroObj.first_name}
         updateType='first_name'
         containerStyle='mt-4'
         labelTitle='First Name'
@@ -54,7 +56,7 @@ function AddLeadModalBody({ closeModal }) {
 
       <InputText
         type='text'
-        defaultValue={leadObj.last_name}
+        defaultValue={cadastroObj.last_name}
         updateType='last_name'
         containerStyle='mt-4'
         labelTitle='Last Name'
@@ -63,7 +65,7 @@ function AddLeadModalBody({ closeModal }) {
 
       <InputText
         type='email'
-        defaultValue={leadObj.email}
+        defaultValue={cadastroObj.email}
         updateType='email'
         containerStyle='mt-4'
         labelTitle='Email Id'
@@ -75,7 +77,10 @@ function AddLeadModalBody({ closeModal }) {
         <button className='btn btn-ghost' onClick={() => closeModal()}>
           Cancel
         </button>
-        <button className='btn btn-primary px-6' onClick={() => saveNewLead()}>
+        <button
+          className='btn btn-primary px-6'
+          onClick={() => saveNewCadastro()}
+        >
           Save
         </button>
       </div>
@@ -83,4 +88,4 @@ function AddLeadModalBody({ closeModal }) {
   );
 }
 
-export default AddLeadModalBody;
+export default AddCadastroModalBody;

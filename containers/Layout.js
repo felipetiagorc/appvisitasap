@@ -11,7 +11,7 @@ import {
 import 'react-notifications/lib/notifications.css';
 import ModalLayout from './ModalLayout';
 
-function Layout() {
+function Layout({ children }) {
   const dispatch = useDispatch();
   const { newNotificationMessage, newNotificationStatus } = useSelector(
     state => state.header
@@ -36,7 +36,7 @@ function Layout() {
           type='checkbox'
           className='drawer-toggle'
         />
-        <PageContent />
+        <PageContent>{children}</PageContent>
         <LeftSidebar />
       </div>
 
