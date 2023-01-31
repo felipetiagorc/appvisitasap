@@ -29,7 +29,7 @@ const routes = [
     name: 'Dashboard'
   },
   {
-    path: '/documentos',
+    path: '/upload',
     icon: <Squares2X2Icon className={iconClasses} />,
     name: 'Documentos'
   },

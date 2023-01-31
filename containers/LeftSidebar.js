@@ -24,19 +24,19 @@ function LeftSidebar() {
               src={Brasao}
               alt='BrasaoSP'
             />
-          </Link>{' '}
+          </Link>
         </li>
         {routes.map((item, k) => {
           return (
             <Link href={item.path} key={k}>
               <div
-                className={`w-48 h-24 text-center border-b-2 border-secondary-500  mt-3 cursor-pointer  ${
+                className={`w-52 h-16 text-center border-secondary-500  mt-3 cursor-pointer  ${
                   router.asPath === item.path
-                    ? 'text-primary-500'
-                    : 'text-secondary-300'
+                    ? 'font-semibold bg-base-200'
+                    : 'font-normal'
                 }`}
               >
-                <div className=' hover:text-primary-500 w-10 mx-auto pb-2'>
+                <div className='hover:text-primary-500 w-10 mx-auto pb-2'>
                   {item.icon}
                 </div>
 

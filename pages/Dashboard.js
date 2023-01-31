@@ -13,11 +13,11 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
       console.log('State on server', store.getState());
 
-      return {
-        props: {
-          title: 'Dash'
-        }
-      };
+      //   return {
+      //     props: {
+      //       title: 'Dash'
+      //     }
+      //   };
     }
 );
 function InternalPage() {
