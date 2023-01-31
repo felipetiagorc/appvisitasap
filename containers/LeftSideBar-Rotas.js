@@ -38,15 +38,11 @@ const routes = [
     icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
     name: 'Cadastro' // name that appear in Sidebar
   },
-  {
-    path: '/charts', // url
-    icon: <ChartBarIcon className={iconClasses} />, // icon component
-    name: 'Charts' // name that appear in Sidebar
-  },
+
   {
     path: '/integration', // url
     icon: <BoltIcon className={iconClasses} />, // icon component
-    name: 'Integration' // name that appear in Sidebar
+    name: 'Nóti Fund' // name that appear in Sidebar
   }
 
   // {

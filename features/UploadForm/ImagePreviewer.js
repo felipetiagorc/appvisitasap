@@ -33,7 +33,8 @@ const ImagePreviewer = ({ data: { type, name } }) => {
 
     try {
       let formData = new FormData();
-      formData.append('email', session.user.email);
+      // formData.append('email', session.user.email);
+      formData.append('email', 'teste@email.com');
       formData.append('nomeDoc', type);
       formData.append('file', image.file);
 

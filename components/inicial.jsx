@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Inicial({ user }) {
   return (
-    <div className='container flex flex-col items-center justify-center min-h-screen p-10 px-10 mx-auto md:py-10 md:p-10 md:px-10'>
+    <div className='container flex flex-col items-center justify-center  p-2 px-6 mx-auto md:p-6 '>
       <h1 className='font-bold text-center text-4xl'>
         Bem vindo a SAP
         <span className='text-blue-500'>

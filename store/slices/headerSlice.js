@@ -37,6 +37,7 @@ export const headerSlice = createSlice({
   // }
 });
 // actions creators - gerados para cada funcao reducer
+
 export const { setPageTitle, removeNotificationMessage, showNotification } =
   headerSlice.actions;
 
