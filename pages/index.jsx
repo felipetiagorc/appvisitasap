@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-// import Inicial from 'components/inicial';
+import Inicial from 'components/inicial';
 import Header from 'containers/Header';
 
 import Layout from 'containers/layout';
@@ -35,7 +35,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      {/* <Inicial /> */}
+      <Inicial />
       {/* <Inicial user={session?.user?.name} /> */}
     </>
   );

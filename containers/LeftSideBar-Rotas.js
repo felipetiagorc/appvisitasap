@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: '/upload',
-    icon: <Squares2X2Icon className={iconClasses} />,
+    icon: <DocumentTextIcon className={iconClasses} />,
     name: 'Documentos'
   },
   {

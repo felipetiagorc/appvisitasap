@@ -32,7 +32,7 @@ function ModalLayout() {
           {/* Loading modal body according to different modal type */}
           {
             {
-              [MODAL_BODY_TYPES.LEAD_ADD_NEW]: (
+              [MODAL_BODY_TYPES.CADASTRO_ADD_NEW]: (
                 <AddCadastroModalBody
                   closeModal={close}
                   extraObject={extraObject}

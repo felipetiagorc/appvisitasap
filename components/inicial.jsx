@@ -16,29 +16,25 @@ export default function Inicial({ user }) {
       <main className='grid items-start grid-cols-1 gap-10 p-10 md:p-0 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 '>
         <section className='bg-blue-500 h-full max-h-72 transform group border-2 border-neutral-800 rounded-2xl duration-300 hover:scale-105 hover:border-blue-600 hover:-translate-y-1 hover:shadow-2xl'>
           <Link href='/upload'>
-            <a>
-              <div className='p-5 py-10 flex flex-col justify-center h-full text-center text-white'>
-                <h2 className='mb-5 text-3xl'>Envio de Documentos</h2>
-                <p className='mb-5'>Necessário fazer Login</p>
-                <button className='p-2 px-6 w-fit self-center text-blue-500 font-bold bg-blue-50 rounded-full group-hover:bg-blue-50 duration-300'>
-                  Entrar
-                </button>
-              </div>
-            </a>
+            <div className='p-5 py-10 flex flex-col justify-center h-full text-center text-white'>
+              <h2 className='mb-5 text-3xl'>Envio de Documentos</h2>
+              <p className='mb-5'>Necessário fazer Login</p>
+              <button className='p-2 px-6 w-fit self-center text-blue-500 font-bold bg-blue-50 rounded-full group-hover:bg-blue-50 duration-300'>
+                Entrar
+              </button>
+            </div>
           </Link>
         </section>
 
         <section className='h-full max-h-72 transform group border-2 border-neutral-800 rounded-2xl duration-300 hover:scale-105 hover:border-blue-600 hover:-translate-y-1 hover:shadow-2xl'>
           <Link href='http://www.sap.sp.gov.br/uni-prisionais/pen.html'>
-            <a target='_blank' rel='noreferrer'>
-              <div className='p-5 py-10 flex flex-col justify-center h-full text-center'>
-                <h2 className='mb-5 text-3xl'>Unidades Prisionais</h2>
-                <p className='mb-5'>Relação de Unidades</p>
-                <button className='p-2 px-6 w-fit self-center text-white font-bold bg-blue-500 rounded-full group-hover:bg-blue-600 duration-300'>
-                  Ver
-                </button>
-              </div>
-            </a>
+            <div className='p-5 py-10 flex flex-col justify-center h-full text-center'>
+              <h2 className='mb-5 text-3xl'>Unidades Prisionais</h2>
+              <p className='mb-5'>Relação de Unidades</p>
+              <button className='p-2 px-6 w-fit self-center text-white font-bold bg-blue-500 rounded-full group-hover:bg-blue-600 duration-300'>
+                Ver
+              </button>
+            </div>
           </Link>
         </section>
 

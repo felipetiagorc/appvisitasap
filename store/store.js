@@ -42,8 +42,9 @@ const masterReducer = (state, action) => {
         size: state.header.size,
         extraObject: state.header.extraObject
       },
-      modalSlice: {
-        title: state.modal.title
+      modal: {
+        title: action.payload.modal.title,
+        isOpen: action.payload.modal.isOpen
       }
     };
     return nextState;

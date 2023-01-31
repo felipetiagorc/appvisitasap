@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getCadastroContent = createAsyncThunk(
   '/cadastro/content',
   async () => {
-    const response = await axios.get('/api/users?page=2', {});
+    const response = await axios.get('https://reqres.in/api/users?page=2', {});
     return response.data;
   }
 );

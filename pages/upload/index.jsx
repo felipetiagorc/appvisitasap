@@ -1,9 +1,11 @@
-import Header from './../../containers/Header';
+import Header from '../../containers/Header';
 // import { UploadForm } from 'components/UploadForm';
 import React from 'react';
-import MultipleFileInput from 'components/MultipleFileInput';
+
 import { setPageTitle } from '../../store/slices/headerSlice';
 import { wrapper } from '../../store/store';
+import ImagePreviewer from '@/features/UploadForm/ImagePreviewer';
+import Toggle from '@/features/UploadForm/Toggle';
 
 const documentos = [
   { id: 1, tipoDoc: 'rg', nomeDoc: 'rg', label: 'RG' },
@@ -21,7 +23,20 @@ export const getServerSideProps = wrapper.getServerSideProps(
 export default function Upload() {
   return (
     <>
-      <MultipleFileInput />
+      {documentos.map(data => (
+        <Toggle
+          key={data.id}
+          data={{ type: data.tipoDoc, name: data.nomeDoc, label: data.nomeDoc }}
+        >
+          <ImagePreviewer
+            key={data.id}
+            data={{
+              type: data.tipoDoc,
+              name: data.nomeDoc
+            }}
+          />
+        </Toggle>
+      ))}
     </>
   );
 }
