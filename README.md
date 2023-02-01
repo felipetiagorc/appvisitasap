@@ -6,6 +6,7 @@
 * Permite enviar arquivos de 2 formas: selecionando os que estão salvos ou tirando foto com o celular.
 * O arquivo está sendo salvo na pasta 'public/uploads' do próprio projeto através do FileSystem e da biblioteca Multer. 
 * Também estão prontas as telas: de login, lista de imagens aguardando análise, perfil do usuário, e uma tela de cadastro. (com dados falsos por enquanto)
+
 ## 2. O que falta?
 * a lógica de autenticação do usuário (como e quando ele vai acessar o app)
 * a lógica de permissão (quando vai poder enviar arquivo, e quais tipos de arquivos - atualmente aceita: jpg, png, e pdf).
@@ -15,9 +16,9 @@
 * consertar botoes que não fecham sozinho depois de clicado (precisa clicar fora pra fechar)
 * Falta implementar como notificar o usuário que o documento foi analisado / ou que há pendência.
 * Painel de administração ? (falta sincronizar com dados reais, se necessário)
-* Ser revisado em relação a segurança da aplicação.
-* Ser revisado em relação as funcionalidades necessárias.
-* Ser revisado em relação a aparência (cores, brasão)
+* Revisar segurança da aplicação.
+* Revisar se tem as funcionalidades necessárias.
+* Revisar a aparência (cores, brasão)
 
 ## Tecnologias:
 * Estrutura: [NextJS]  (https://nextjs.org/)
