@@ -8,7 +8,14 @@ import { getSession } from 'next-auth/react';
 import LeftSidebar from '../containers/LeftSidebar';
 import { useDispatch } from 'react-redux';
 import { setPageTitle } from '../store/slices/headerSlice';
+import { wrapper } from '../store/store';
 
+export const getServerSideProps = wrapper.getServerSideProps(
+  store => async () => {
+    // we can set the initial state from here
+    await store.dispatch(setPageTitle({ title: 'Inicio' }));
+  }
+);
 // export const getServerSideProps = async context => {
 //   const session = await getSession(context);
 
@@ -28,12 +35,6 @@ import { setPageTitle } from '../store/slices/headerSlice';
 // };
 
 export default function Home() {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(setPageTitle('Inicio'));
-  // }, []);
-
   return (
     <>
       <Head>

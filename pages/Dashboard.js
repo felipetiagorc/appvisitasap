@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setPageTitle } from '../store/slices/headerSlice';
 import Dashboard from '../features/dashboard/index';
+import { setPageTitle } from '../store/slices/headerSlice';
 import { wrapper } from '../store/store';
-import Layout from '@/containers/layout';
 
 export const getServerSideProps = wrapper.getServerSideProps(
   store =>

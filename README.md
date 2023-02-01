@@ -8,10 +8,11 @@
 * Também estão prontas as telas: de login, lista de imagens aguardando análise, perfil do usuário, e uma tela de cadastro. (com dados falsos por enquanto)
 ## 2. O que falta?
 * a lógica de autenticação do usuário (como e quando ele vai acessar o app)
-* a lógica de permissão (quando vai poder enviar arquivo, e quais tipos de arquivos).
+* a lógica de permissão (quando vai poder enviar arquivo, e quais tipos de arquivos - atualmente aceita: jpg, png, e pdf).
 * exibir mensagem de sucesso quando o arquivo for salvo no banco
 * exibir lista dos arquivos enviados pelo usuário (a tela está pronta, falta sincronizar com os dados reais)
 * consertar falha aleatória que ocorre no titulo durante transição de pagina. (possivel problema de sincronizar state do servidor com state do front-end)
+* consertar botoes que não fecham sozinho depois de clicado (precisa clicar fora pra fechar)
 * Falta implementar como notificar o usuário que o documento foi analisado / ou que há pendência.
 * Painel de administração ? (falta sincronizar com dados reais, se necessário)
 * Ser revisado em relação a segurança da aplicação.
