@@ -33,6 +33,12 @@ const routes = [
     icon: <DocumentTextIcon className={iconClasses} />,
     name: 'Documentos'
   },
+
+  {
+    path: '/uploadCart',
+    icon: <DocumentTextIcon className={iconClasses} />,
+    name: 'Documentos new'
+  },
   {
     path: '/cadastro', // url
     icon: <InboxArrowDownIcon className={iconClasses} />, // icon component

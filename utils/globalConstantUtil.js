@@ -2,6 +2,7 @@ module.exports = Object.freeze({
   MODAL_BODY_TYPES: {
     USER_DETAIL: 'USER_DETAIL',
     CADASTRO_ADD_NEW: 'CADASTRO_ADD_NEW',
+    UPLOAD_ADD_NEW: 'UPLOAD_ADD_NEW',
     DEFAULT: ''
   },
 
