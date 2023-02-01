@@ -15,22 +15,23 @@
 * Falta implementar como notificar o usuário que o documento foi analisado / ou que há pendência.
 * Painel de administração ? (falta sincronizar com dados reais, se necessário)
 * Ser revisado em relação a segurança da aplicação.
+* Ser revisado em relação as funcionalidades necessárias.
 * Ser revisado em relação a aparência (cores, brasão)
 
 ## Tecnologias:
 * Estrutura: [NextJS]  (https://nextjs.org/)
-* Framework: ReactJS  (https://reactjs.org/)
-* Estilos: TailwindCSS (https://tailwindcss.com/) + DaisyUI (https://daisyui.com/)
+* Framework: [ReactJS]  (https://reactjs.org/)
+* Estilos: [TailwindCSS] (https://tailwindcss.com/) + [DaisyUI] (https://daisyui.com/)
 * Template: (https://github.com/srobbin01/daisyui-admin-dashboard-template)
 
-## Estrutura de Pastas:
+# Estrutura de Pastas:
 
 * "components" - componentes comuns e reaproveitáveis do projeto.
 * "containers" - componentes relativos ao layout: LeftBar, Header, PageContent, etc.
 * "features" - outros recursos que possuem lógica de página. Cada recurso é uma pasta, e pode ter pasta adicional para agrupar diferentes funcionalidades como painel de administração, modals, notificações.
 * "pages" - aqui ficam os arquvos que são rotas para paginas. (em cada pagina a gente usa components, containers e features)
 
-# Gerenciamento do estado com Redux Toolkit:
+## Gerenciamento do estado com Redux Toolkit:
 
 * "/store/slices" - onde fica cada slice individual ('fatias de store' criados com 'createSlice') 
 * "/store/store.js" - onde fica o 'configureStore', que conecta cada slice ao store e exporta como 'reducer'  
