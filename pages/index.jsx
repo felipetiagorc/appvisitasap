@@ -2,10 +2,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Inicial from 'components/inicial';
 import Header from 'containers/Header';
-
+import { useEffect } from 'react';
 import Layout from 'containers/layout';
 import { getSession } from 'next-auth/react';
 import LeftSidebar from '../containers/LeftSidebar';
+import { useDispatch } from 'react-redux';
+import { setPageTitle } from '../store/slices/headerSlice';
 
 // export const getServerSideProps = async context => {
 //   const session = await getSession(context);
@@ -26,6 +28,12 @@ import LeftSidebar from '../containers/LeftSidebar';
 // };
 
 export default function Home() {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(setPageTitle('Inicio'));
+  // }, []);
+
   return (
     <>
       <Head>

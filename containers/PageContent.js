@@ -1,12 +1,8 @@
 import Header from './Header';
-import Link from 'next/link';
-import routes from '../containers/LeftSideBar-Rotas';
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 import SuspenseContent from './SuspenseContent';
 import { useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
-
-const Page404 = lazy(() => import('../pages/404'));
 
 function PageContent({ children }) {
   const mainContentRef = useRef(null);

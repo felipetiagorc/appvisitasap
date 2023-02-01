@@ -71,7 +71,7 @@ const ImagePreviewer = ({ data: { type, name } }) => {
             id={name}
             name={name}
             labelText={
-              <p className='flex flex-col items-center w-20 h-20 justify-center bg-sky-800 border-2  mx-4 px-4 text-white py-1.5 text-center text-sm rounded  cursor-pointer shadow-2xl'>
+              <p className='flex flex-col items-center w-20 h-20 justify-center bg-sky-600 border-2  mx-4 px-4 text-white py-1.5 text-center text-sm rounded  cursor-pointer shadow-2xl'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -96,7 +96,7 @@ const ImagePreviewer = ({ data: { type, name } }) => {
             id={name}
             name={name}
             labelText={
-              <p className='flex flex-col items-center  w-20 h-20 justify-center  bg-sky-800  border-2 border-white mx-4 px-4 text-white py-1.5 text-center text-sm rounded cursor-pointer'>
+              <p className='flex flex-col items-center  w-20 h-20 justify-center  bg-sky-600  border-2 border-white mx-4 px-4 text-white py-1.5 text-center text-sm rounded cursor-pointer'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
