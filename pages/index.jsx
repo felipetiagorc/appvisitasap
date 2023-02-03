@@ -9,6 +9,7 @@ import LeftSidebar from '../containers/LeftSidebar';
 import { useDispatch } from 'react-redux';
 import { setPageTitle } from '../store/slices/headerSlice';
 import { wrapper } from '../store/store';
+import { useStore } from '../store/zustandStore';
 
 export const getServerSideProps = wrapper.getServerSideProps(
   store => async () => {
@@ -35,6 +36,11 @@ export const getServerSideProps = wrapper.getServerSideProps(
 // };
 
 export default function Home() {
+  const pageTitle = useStore(state => state.pageTitle);
+  console.log('pageTitlez: ', pageTitle);
+  // const newPageTitle = useStore(state => state.setPageTitle('novoTitulo'));
+  // console.log('newPageTitle: ', newPageTitle);
+
   return (
     <>
       <Head>

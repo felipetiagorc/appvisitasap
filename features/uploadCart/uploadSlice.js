@@ -11,18 +11,8 @@ export const getUploadContent = createAsyncThunk(
   // pq sao providos pelo RTK, e por isso precisam estar
   // envolvidos com colchetes '[]'
   async () => {
+    // dar get na api
     // const response = await axios.get('https://reqres.in/api/users?page=2', {});
-    const dir = './public/uploads/';
-    const response = fs.readdirSync(dir, (err, files) => {
-      if (err) {
-        throw err;
-      }
-      files.forEach(file => {
-        console.log(file);
-      });
-    });
-    console.log('response', response);
-    return response;
   }
 );
 

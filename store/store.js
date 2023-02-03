@@ -19,7 +19,8 @@ const combinedReducer = combineReducers({
   header: headerSlice,
   rightDrawer: rightDrawerSlice,
   modal: modalSlice,
-  cadastro: cadastroSlice
+  cadastro: cadastroSlice,
+  upload
 });
 
 //antes do next-wraper
@@ -28,7 +29,8 @@ const combinedReducer = combineReducers({
 // });
 
 // estado de entrada para esse master redux terá todos os valores prévios...
-
+// se a action for hydrate, ele carrega o estado no server 'nextState',
+// senão, usa o combinedReducer.
 const masterReducer = (state, action) => {
   if (action.type === HYDRATE) {
     const nextState = {
@@ -37,10 +39,7 @@ const masterReducer = (state, action) => {
       // para cada slice ...
       header: {
         pageTitle: action.payload.header.pageTitle,
-        isOpen: state.header.isOpen,
-        bodyType: state.header.bodyType,
-        size: state.header.size,
-        extraObject: state.header.extraObject
+        n
       },
       modal: {
         title: action.payload.modal.title,
